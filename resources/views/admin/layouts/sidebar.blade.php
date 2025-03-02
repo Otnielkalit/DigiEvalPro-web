@@ -59,5 +59,23 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
+        <li class="menu-item {{ \Route::is('jasa.*') ? 'open active' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">Jasa</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ \Route::is('jasa.index') ? 'active' : '' }}">
+                    <a href="forms-basic-inputs.html" class="menu-link">
+                        <div data-i18n="Basic Inputs">List Jasa</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ \Route::is('jasa.create') ? 'active' : '' }}">
+                    <a href="{{ route('jasa.create') }}" class="menu-link">
+                        <div data-i18n="Input groups">Buat Jasa</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </aside>

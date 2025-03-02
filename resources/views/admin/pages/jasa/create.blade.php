@@ -1,9 +1,8 @@
 @extends('admin.layouts.admin_master')
-
 @section('content')
     <div class="card mb-4">
         <div class="card-header">
-            <h4 class="mb-0">Buat Jasa</h4>
+            <h3 class="mb-0 text-center">Buat Jasa</h3>
         </div>
         <div class="card-body">
             <form action="{{ route('jasa.store') }}" method="post" enctype="multipart/form-data">
@@ -24,9 +23,7 @@
                         </button>
                     </div>
                 </div>
-
                 <hr class="my-4">
-
                 <div class="row">
                     <div class="mb-3 col-md-6">
                         <label for="nama" class="form-label">Nama Jasa</label>
@@ -36,7 +33,6 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
                     <div class="mb-3 col-md-6">
                         <label for="harga" class="form-label">Harga</label>
                         <input class="form-control @error('harga') is-invalid @enderror" type="number" id="harga"
@@ -46,7 +42,6 @@
                         @enderror
                     </div>
                 </div>
-
                 <div class="mb-3">
                     <label for="deskripsi" class="form-label">Deskripsi</label>
                     <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" rows="4">{{ old('deskripsi') }}</textarea>
@@ -54,8 +49,6 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-
-
                 <div class="mt-3">
                     <button type="submit" class="btn btn-success me-2">Simpan Jasa</button>
                     <a href="{{ route('jasa.index') }}" class="btn btn-secondary">Batal</a>
@@ -102,8 +95,8 @@
     </script>
     <style>
         .ck-editor__editable {
-            min-height: 300px !important;
-            max-height: 500px;
+            min-height: 200px !important;
+            max-height: 400px;
         }
     </style>
 @endpush
