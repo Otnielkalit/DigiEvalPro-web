@@ -66,7 +66,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item {{ \Route::is('jasa.index') ? 'active' : '' }}">
-                    <a href="forms-basic-inputs.html" class="menu-link">
+                    <a href="{{ route('jasa.index') }}" class="menu-link">
                         <div data-i18n="Basic Inputs">List Jasa</div>
                     </a>
                 </li>
