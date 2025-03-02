@@ -3,7 +3,7 @@
         class="container-fluid d-flex flex-md-row flex-column justify-content-between align-items-md-center gap-1 container-p-x py-3">
         <div>
             <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/landing/" target="_blank"
-                class="footer-text fw-bolder">Dinas Pemberdayaan Masyarakat Desa, Perempuan, dan Anak
+                class="footer-text fw-bolder">DigiEval Pro
             </a>
             ©
         </div>
@@ -19,9 +19,10 @@
 </footer>
 
 <script>
-    document.getElementById('logout-button').addEventListener('click', function (e) {
+    document.getElementById('logout-button').addEventListener('click', function(e) {
         e.preventDefault();
-        Swal.fire({w
+        Swal.fire({
+            w
             title: 'Anda yakin ingin logout?',
             text: "Anda akan keluar dari sesi saat ini!",
             icon: 'warning',
