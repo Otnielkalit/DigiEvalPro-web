@@ -12,7 +12,9 @@ class JasaController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.pages.jasa.index', [
+            'title' => 'List Jasa'
+        ]);
     }
 
     /**
@@ -36,10 +38,8 @@ class JasaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Jasa $jasa)
-    {
-        //
-    }
+    public function show(Jasa $jasa) {}
+
 
     /**
      * Show the form for editing the specified resource.
