@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\JasaController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JasaController;
+use App\Http\Controllers\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +16,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('public.pages.welcome',[
-        'title' => 'Selamat Datang di DigiEval Pro'
-    ]);
-})->name('welcome');
 
-Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+Route::get('/', [App\Http\Controllers\Public\PublicController::class, 'welcome'])->name('welcome');
 
-Route::resource('jasa', JasaController::class);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('wauserli')->middleware(['auth', 'auth.user'])->group(function () {
+    //ini route khusus untuk wali-murid
+});
+
+
+Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
+    //ini route khusus untuk admin
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::resource('jasa', JasaController::class);
+});
+
+
+Auth::routes();
+Route::get('logout', function () {
+    Auth::logout();
+});
