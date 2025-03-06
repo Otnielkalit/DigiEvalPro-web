@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\JasaController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\JasaController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +16,10 @@ use App\Http\Controllers\AdminDashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('public.pages.welcome',[
+        'title' => 'Selamat Datang di DigiEval Pro'
+    ]);
+})->name('welcome');
 
 Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
