@@ -13,4 +13,11 @@ class PublicController extends Controller
             'title' => 'Selamat Datang di DigiEval Pro'
         ]);
     }
+
+    public function about()
+    {
+        return view('public.pages.about', [
+            'title' => 'About DigiEval Pro'
+        ]);
+    }
 }
