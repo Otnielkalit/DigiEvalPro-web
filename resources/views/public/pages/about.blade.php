@@ -3,6 +3,7 @@
 @extends('public.layouts.master')
 
 @section('content')
+<!-- About Page -->
     <div class="breadcrumb-section breadcrumb-bg">
         <div class="container">
             <div class="row">
