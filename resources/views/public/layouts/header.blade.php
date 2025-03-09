@@ -18,6 +18,8 @@
                             <li class="{{ request()->routeIs('contact') ? 'current-list-item' : '' }}"><a
                                     href="{{ route('contact') }}">Contact</a></li>
                             <li><a href="shop.html">Shop</a>
+                            <li class="{{ request()->routeIs('service') ? 'current-list-item' : '' }}"><a
+                                    href="{{ route('service') }}">Service</a></li>
                             </li>
                             <li>
                                 <div class="header-icons">

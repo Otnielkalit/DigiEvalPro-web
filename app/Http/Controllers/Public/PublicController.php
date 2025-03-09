@@ -27,4 +27,11 @@ class PublicController extends Controller
             'title' => 'Contact DigiEval Pro'
         ]);
     }
+
+    public function service()
+    {
+        return view('public.pages.service', [
+            'title' => 'Service DigiEval Pro'
+        ]);
+    }
 }
