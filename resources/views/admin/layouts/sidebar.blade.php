@@ -75,6 +75,9 @@
                         <div data-i18n="Input groups">Buat Jasa</div>
                     </a>
                 </li>
+                <li class="menu-item {{ \Route::is('jasa.edit') ? 'active' : '' }}">
+                <a href="{{ route('jasa.edit', ['jasa' => 1]) }}" class="menu-link">Edit Jasa</a>
+                </li>
             </ul>
         </li>
     </ul>

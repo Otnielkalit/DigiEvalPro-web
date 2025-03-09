@@ -44,9 +44,11 @@ class JasaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Jasa $jasa)
+    public function edit()
     {
-        //
+        return view('admin.pages.jasa.edit', [
+            'title' => 'Edit Jasa',
+        ]);
     }
 
     /**
