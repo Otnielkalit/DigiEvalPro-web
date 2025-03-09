@@ -22,11 +22,7 @@
                                     href="{{ route('service') }}">Service</a></li>
                             </li>
                             <li>
-                                <div class="header-icons">
-                                    <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                                    <a class="login-btn" href="login.html"
-                                        style="margin-left: 15px; font-weight: bold;">Login</a>
-                                </div>
+                                <a href="{{ route('login') }}" class="boxed-btn text-xl">Login Admin</a>
                             </li>
                         </ul>
                     </nav>
