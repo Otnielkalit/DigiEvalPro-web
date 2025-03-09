@@ -38,8 +38,12 @@ class JasaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Jasa $jasa) {}
-
+    public function show($nama)
+    {
+        $title = "Detail Jasa - " . ucfirst(str_replace('-', ' ', $nama));
+        
+        return view('admin.pages.jasa.detail', compact('title', 'nama'));
+    }  
 
     /**
      * Show the form for editing the specified resource.

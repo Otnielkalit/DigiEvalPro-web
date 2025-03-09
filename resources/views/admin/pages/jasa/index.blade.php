@@ -10,6 +10,7 @@
                         <th>Nama Jasa</th>
                         <th>Harga</th>
                         <th>Deskripsi</th>
+                        <th>Detail</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,13 +22,16 @@
                             ['nama' => 'Cloud Recommendation', 'harga' => 500000, 'deskripsi' => 'Rekomendasi solusi cloud sesuai kebutuhan bisnis.'],
                         ];
                     @endphp
-                    
+
                     @foreach ($jasa as $key => $item)
                         <tr>
                             <td>{{ $key + 1 }}</td>
                             <td>{{ $item['nama'] }}</td>
                             <td>Rp{{ number_format($item['harga'], 0, ',', '.') }}</td>
                             <td>{{ $item['deskripsi'] }}</td>
+                            <td>
+                            <a href="{{ route('jasa.detail', ['nama' => Str::slug($item['nama'], '-')]) }}" class="btn btn-info btn-sm">Detail</a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

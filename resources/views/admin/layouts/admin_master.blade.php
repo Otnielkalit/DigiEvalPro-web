@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="asset-admin/assets/vendor/css/core.css" class="template-customizer-core-css">
     <link rel="stylesheet" href="asset-admin/assets/vendor/css/theme-default.css" class="template-customizer-theme-css">
     <link rel="stylesheet" href="asset-admin/assets/css/demo.css">
+    <link rel="stylesheet" href="asset-admin/assets/css/main.css">
     <script src="asset-admin/assets/vendor/js/helpers.js"></script>
     <script src="asset-admin/assets/js/config.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
