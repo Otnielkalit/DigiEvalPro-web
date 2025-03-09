@@ -7,7 +7,7 @@
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
                         <p>Read the Details</p>
-                        <h1>Single Article</h1>
+                        <h1>Detail Service</h1>
                     </div>
                 </div>
             </div>
