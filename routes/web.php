@@ -20,6 +20,7 @@ use App\Http\Controllers\Public\PublicController;
 
 Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
 Route::get('/about', [PublicController::class, 'about'])->name('about');
+Route::get('/contact', [PublicController::class, 'contact'])->name('contact');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
