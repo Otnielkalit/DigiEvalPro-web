@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JasaController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\Public\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,14 @@ use App\Http\Controllers\AdminDashboardController;
 */
 
 
-Route::get('/', [App\Http\Controllers\Public\PublicController::class, 'welcome'])->name('welcome');
+Route::get('/', [PublicController::class, 'welcome'])->name('welcome');
+Route::get('/about', [PublicController::class, 'about'])->name('about');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('wauserli')->middleware(['auth', 'auth.user'])->group(function () {
-    //ini route khusus untuk wali-murid
+
+Route::prefix('user')->middleware(['auth', 'auth.user'])->group(function () {
+    //ini route khusus untuk user
 });
 
 

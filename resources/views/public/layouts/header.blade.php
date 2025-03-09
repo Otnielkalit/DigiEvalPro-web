@@ -10,8 +10,11 @@
                     </div>
                     <nav class="main-menu">
                         <ul>
-                            <li class="current-list-item"><a href="{{ route('welcome') }}">Home</a></li>
-                            <li><a href="about.html">About</a></li>
+                            <li class="{{ request()->routeIs('welcome') ? 'current-list-item' : '' }}">
+                                <a href="{{ route('welcome') }}">Home</a>
+                            </li>
+                            <li class="{{ request()->routeIs('about') ? 'current-list-item' : '' }}"><a
+                                    href="{{ route('about') }}">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
                             <li><a href="shop.html">Shop</a>
                             </li>
