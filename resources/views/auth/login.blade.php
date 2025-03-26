@@ -44,7 +44,7 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <a href="{{ route('welcome') }}">
-                                            <img height="110px" src="assets/img/logo.png" alt="Logo"
+                                            <img height="110px" src="assets/images/logo.png" alt="Logo"
                                                 class="logo-img">
                                         </a>
                                         <h1 class="h2 text-gray-900 mb-5">Welcome Back in DigiEval Pro</h1>

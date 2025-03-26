@@ -1,199 +1,94 @@
-1. Tesalonika @Tesalonika R M P_11421053  pada resource/views/pubic/pages/about.blade.php
-
 @extends('public.layouts.master')
 
 @section('content')
-<!-- About Page -->
-    <div class="breadcrumb-section breadcrumb-bg">
+    <section class="bg-img1 txt-center p-lr-5 p-tb-82">
+    </section>
+    <section class="bg0 p-t-75 p-b-120">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="breadcrumb-text">
-                        <p>We sale services</p>
-                        <h1>About Us</h1>
+            <div class="row p-b-148">
+                <div class="col-md-7 col-lg-8">
+                    <div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+                        <h3 class="mtext-111 cl2 p-b-16">
+                            Our Story
+                        </h3>
+
+                        <p class="stext-113 cl6 p-b-26">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non
+                            auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt
+                            augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                            Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi
+                            tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu
+                            egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut
+                            enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec
+                            condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.
+                        </p>
+
+                        <p class="stext-113 cl6 p-b-26">
+                            Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam
+                            aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci
+                            ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus
+                            sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt
+                            erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et
+                            maximus enim ligula ac ligula.
+                        </p>
+
+                        <p class="stext-113 cl6 p-b-26">
+                            Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us
+                            on (+1) 96 716 6879
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-11 col-md-5 col-lg-4 m-lr-auto">
+                    <div class="how-bor1 ">
+                        <div class="hov-img0">
+                            <img src="assets/images/about-01.jpg" alt="IMG">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="feature-bg">
-        <div class="container">
+
             <div class="row">
-                <div class="col-lg-7">
-                    <div class="featured-text">
-                        <h2 class="pb-3">Why <span class="orange-text">DigiEval</span></h2>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 mb-4 mb-md-5">
-                                <div class="list-box d-flex">
-                                    <div class="list-icon">
-                                        <i class="fas fa-shipping-fast"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>Analyze</h3>
-                                        <p>Combining multiple evaluation techniques in one integrated platform.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-                                <div class="list-box d-flex">
-                                    <div class="list-icon">
-                                        <i class="fas fa-money-bill-alt"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>Best Recommendation</h3>
-                                        <p>Provides immediate insights for faster decision making</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 mb-5 mb-md-5">
-                                <div class="list-box d-flex">
-                                    <div class="list-icon">
-                                        <i class="fas fa-briefcase"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>Flexibility</h3>
-                                        <p>Provides immediate insights for faster decision making</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="list-box d-flex">
-                                    <div class="list-icon">
-                                        <i class="fas fa-sync-alt"></i>
-                                    </div>
-                                    <div class="content">
-                                        <h3>User Friendly</h3>
-                                        <p>Easy to use without requiring in-depth technical skills.</p>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="order-md-2 col-md-7 col-lg-8 p-b-30">
+                    <div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
+                        <h3 class="mtext-111 cl2 p-b-16">
+                            Our Mission
+                        </h3>
+
+                        <p class="stext-113 cl6 p-b-26">
+                            Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed
+                            consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                            turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida.
+                            Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit
+                            egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor
+                            ante. Ut mauris ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae
+                            mi vestibulum, nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus
+                            maximus euismod. Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.
+                        </p>
+
+                        <div class="bor16 p-l-29 p-b-9 m-t-22">
+                            <p class="stext-114 cl6 p-r-40 p-b-11">
+                                Creativity is just connecting things. When you ask creative people how they did something,
+                                they feel a little guilty because they didn't really do it, they just saw something. It
+                                seemed obvious to them after a while.
+                            </p>
+
+                            <span class="stext-111 cl8">
+                                - Steve Job’s
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
+                    <div class="how-bor2">
+                        <div class="hov-img0">
+                            <img src="assets/images/about-02.jpg" alt="IMG">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="mt-150">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="section-title">
-                        <h3>Our <span class="orange-text">Team</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-1"></div>
-                        <h4>Jensri<span>Team</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-1"></div>
-                        <h4>Tesalonika<span>Team</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-1"></div>
-                        <h4>Otniel<span>Team</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-1"></div>
-                        <h4>Resmita<span>Team</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-team-item">
-                        <div class="team-bg team-bg-1"></div>
-                        <h4>Albertus<span>Team</span></h4>
-                        <ul class="social-link-team">
-                            <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="testimonail-section mt-150 mb-150">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 offset-lg-1 text-center">
-                    <div class="testimonial-sliders">
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar1.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Wati <span>CEO of PT.xxx</span></h3>
-                                <p class="testimonial-body">
-                                    "Platform ini membantu kami memahami sentimen pelanggan terhadap produk baru kami.
-                                    Analisisnya akurat dan sangat mudah digunakan!"
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar2.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Budi <span>CEO of PT.xxx</span></h3>
-                                <p class="testimonial-body">
-                                    "Kami menggunakan analisis produk ini untuk mengevaluasi fitur baru. Data yang
-                                    dihasilkan sangat membantu dalam pengambilan keputusan!"
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-testimonial-slider">
-                            <div class="client-avater">
-                                <img src="assets/img/avaters/avatar3.png" alt="">
-                            </div>
-                            <div class="client-meta">
-                                <h3>Dodo <span>CEO of PT.xxx</span></h3>
-                                <p class="testimonial-body">
-                                    "Dulu saya kesulitan mengetahui produk mana yang paling diminati pelanggan.
-                                    Sekarang, saya bisa melihat data analitik yang jelas dan akurat!"
-                                </p>
-                                <div class="last-icon">
-                                    <i class="fas fa-quote-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </section>
 @endsection
+
