@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\JasaController;
+use App\Http\Controllers\Admin\JasaController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\Public\PublicController;
 

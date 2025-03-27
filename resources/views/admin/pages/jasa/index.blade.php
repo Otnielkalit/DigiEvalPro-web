@@ -1,4 +1,5 @@
 @extends('admin.layouts.admin_master')
+
 @section('content')
     <div class="card">
         <h5 class="card-header">Daftar Jasa</h5>
@@ -10,27 +11,31 @@
                         <th>Nama Jasa</th>
                         <th>Harga</th>
                         <th>Deskripsi</th>
-                        <th>Detail</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @php
-                        $jasa = [
-                            ['nama' => 'Usability Analyze', 'harga' => 250000, 'deskripsi' => 'Analisis usability untuk meningkatkan pengalaman pengguna.'],
-                            ['nama' => 'Sentiment Analyze', 'harga' => 300000, 'deskripsi' => 'Analisis sentimen untuk memahami opini pengguna.'],
-                            ['nama' => 'Code Refactory', 'harga' => 400000, 'deskripsi' => 'Refaktor kode untuk meningkatkan kualitas dan performa.'],
-                            ['nama' => 'Cloud Recommendation', 'harga' => 500000, 'deskripsi' => 'Rekomendasi solusi cloud sesuai kebutuhan bisnis.'],
-                        ];
-                    @endphp
-
                     @foreach ($jasa as $key => $item)
                         <tr>
                             <td>{{ $key + 1 }}</td>
-                            <td>{{ $item['nama'] }}</td>
-                            <td>Rp{{ number_format($item['harga'], 0, ',', '.') }}</td>
-                            <td>{{ $item['deskripsi'] }}</td>
+                            <td>{{ $item->nama }}</td>
+                            <td>Rp{{ number_format($item->harga, 0, ',', '.') }}</td>
+                            <td>{!! Str::limit($item->deskripsi, 50) !!}</td>
                             <td>
-                            <a href="{{ route('jasa.detail', ['nama' => Str::slug($item['nama'], '-')]) }}" class="btn btn-info btn-sm">Detail</a>
+                                <a href="{{ route('jasa.show', $item->id) }}" class="btn btn-primary btn-sm">
+                                    <i class='bx bx-show'></i> Detail
+                                </a>
+                                <a href="{{ route('jasa.edit', $item->id) }}" class="btn btn-warning btn-sm">
+                                    <i class='bx bx-edit'></i> Edit
+                                </a>
+                                <form action="{{ route('jasa.destroy', $item->id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Apakah Anda yakin ingin menghapus jasa ini?')">
+                                        <i class='bx bx-trash'></i> Hapus
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

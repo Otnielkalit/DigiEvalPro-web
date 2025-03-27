@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('jasas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->text('deskripsi');
+            $table->string('harga');
+            $table->string('gambar');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

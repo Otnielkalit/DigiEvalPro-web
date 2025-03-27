@@ -5,7 +5,7 @@
             <h3 class="mb-0 text-center">Buat Jasa</h3>
         </div>
         <div class="card-body">
-            <form action="{{ route('jasa.store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('jasa.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="d-flex align-items-start align-items-sm-center gap-4">
                     <img src="{{ asset('asset-admin/assets/img/avatars/upload.png') }}" alt="user-avatar"
@@ -14,8 +14,8 @@
                         <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                             <span class="d-none d-sm-block">Pilih Gambar</span>
                             <i class="bx bx-upload d-block d-sm-none"></i>
-                            <input type="file" id="upload" name="image" class="account-file-input" hidden
-                                accept="image/png, image/jpeg">
+                            <input type="file" id="upload" name="gambar" class="account-file-input" hidden
+                                accept="image/png, image/jpeg, image/jpg, image/gif">
                         </label>
                         <button type="button" class="btn btn-outline-secondary mb-4" id="reset">
                             <i class="bx bx-reset d-block d-sm-none"></i>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="harga" class="form-label">Harga</label>
-                        <input class="form-control @error('harga') is-invalid @enderror" type="number" id="harga"
+                        <input class="form-control @error('harga') is-invalid @enderror" type="text" id="harga"
                             name="harga" value="{{ old('harga') }}">
                         @error('harga')
                             <div class="invalid-feedback">{{ $message }}</div>
