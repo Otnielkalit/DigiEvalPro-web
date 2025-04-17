@@ -6,10 +6,79 @@
             <h3 class="mb-0 text-center">Edit Jasa</h3>
         </div>
         <div class="card-body">
+
+            {{-- ✅ Bagian Edit Harga Per Durasi --}}
+            <div class="mb-4">
+                <div class="container mb-5">
+                    <h3 class="mb-4">Tambah Detail Harga</h3>
+                    <form action="{{ route('jasa-prices.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="jasa_id" value="{{ $jasa->id }}">
+                        <div class="d-flex flex-wrap align-items-center gap-4">
+                            <div class="form-group">
+                                <label for="durasi_hari" class="form-label">Durasi (Hari)</label>
+                                <input type="number" name="durasi_hari" id="durasi_hari" class="form-control" min="1"
+                                    placeholder="Contoh: 2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="harga" class="form-label">Harga</label>
+                                <input type="number" name="harga" id="harga" class="form-control" placeholder="Contoh: 150000"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="skala_project" class="form-label">Skala Project</label>
+                                <select name="skala_project" id="skala_project" class="form-control" required>
+                                    <option value="">-- Pilih Skala --</option>
+                                    <option value="kecil">Kecil</option>
+                                    <option value="sedang">Sedang</option>
+                                    <option value="besar">Besar</option>
+                                </select>
+                            </div>
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary">Simpan</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <h5>Detail Harga Jasa</h5>
+                @forelse ($hargaDetails as $harga)
+                    <div class="card mb-2">
+                        <div class="card-body p-2">
+                            <form action="{{ route('jasa-price.update', $harga->id) }}" method="POST" class="row g-2 align-items-center">
+                                @csrf
+                                @method('PUT')
+                                <div class="col-md-3">
+                                    <input type="number" name="durasi_hari" class="form-control"
+                                        value="{{ $harga->durasi_hari }}" placeholder="Durasi (hari)" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="number" name="harga" class="form-control"
+                                        value="{{ $harga->harga }}" placeholder="Harga" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="skala_project" class="form-control" required>
+                                        <option value="kecil" {{ $harga->skala_project === 'kecil' ? 'selected' : '' }}>Kecil</option>
+                                        <option value="sedang" {{ $harga->skala_project === 'sedang' ? 'selected' : '' }}>Sedang</option>
+                                        <option value="besar" {{ $harga->skala_project === 'besar' ? 'selected' : '' }}>Besar</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 text-end">
+                                    <button type="submit" class="btn btn-sm btn-success me-1">Simpan</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                @empty
+                    <p class="text-muted">Belum ada detail harga</p>
+                @endforelse
+            </div>
+
+            {{-- ✅ Bagian Form Edit Jasa --}}
             <form action="{{ route('jasa.update', $jasa->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <div class="d-flex align-items-start align-items-sm-center gap-4">
+
+                <div class="d-flex align-items-start align-items-sm-center gap-4 mb-3">
                     <img src="{{ asset('storage/' . $jasa->gambar) }}" alt="{{ $jasa->nama }}"
                         class="d-block rounded" height="250" width="250" id="img-preview">
                     <div class="button-wrapper">
@@ -49,9 +118,11 @@
                     <a href="{{ route('jasa.index') }}" class="btn btn-secondary">Batal</a>
                 </div>
             </form>
+
         </div>
     </div>
 @endsection
+
 
 @push('scripts')
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>

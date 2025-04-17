@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Jasa;
+use App\Models\JasaPrice;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -67,20 +68,17 @@ class JasaController extends Controller
     }
 
 
-    /**
+    /*
      * Display the specified resource.
      */
     public function show($id)
     {
-        // Ambil data jasa berdasarkan ID
         $jasa = Jasa::findOrFail($id);
-
-        // Buat judul halaman yang sesuai
-        $title = "Detail Jasa - " . ucfirst($jasa->nama);
-
+        $hargaDetails = JasaPrice::where('jasa_id', $id)->orderBy('durasi_hari')->get();
         return view('admin.pages.jasa.detail', [
-            'title' => $title,
+            'title' => "Detail Jasa - " . ucfirst($jasa->nama),
             'jasa' => $jasa,
+            'hargaDetails' => $hargaDetails
         ]);
     }
 
@@ -88,10 +86,12 @@ class JasaController extends Controller
      * Show the form for editing the specified resource.
      */ public function edit($id)
     {
+        $hargaDetails = JasaPrice::where('jasa_id', $id)->orderBy('durasi_hari')->get();
         $jasa = Jasa::findOrFail($id);
         return view('admin.pages.jasa.edit', [
             'title' => 'Edit Jasa',
             'jasa' => $jasa,
+            'hargaDetails' => $hargaDetails
         ]);
     }
 

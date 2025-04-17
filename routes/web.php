@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\JasaPriceController;
 use App\Http\Controllers\Admin\JasaController;
 use App\Http\Controllers\Public\PublicController;
 use App\Http\Controllers\AdminDashboardController;
@@ -45,6 +46,10 @@ Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
     Route::get('/admin/jasa/detail/{nama}', function ($nama) {
         return view('admin.pages.jasa.detail', compact('nama'));
     })->name('jasa.detail');
+    Route::post('/jasa-prices', [JasaPriceController::class, 'store'])->name('jasa-prices.store');
+    Route::put('/jasa-price/{id}', [JasaPriceController::class, 'update'])->name('jasa-price.update');
+Route::delete('/jasa-price/{id}', [JasaPriceController::class, 'destroy'])->name('jasa-price.destroy');
+
 });
 
 Auth::routes();
