@@ -39,12 +39,21 @@
                                 href="{{ route('contact') }}">Kontak</a></li>
                     </ul>
                 </div>
-                <div class="wrap-icon-header flex-w flex-r-m">
-                    <a href="{{ route('login') }}"
-                        class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                        Login
-                    </a>
-                </div>
+                @if (Auth::user())
+                    <div class="wrap-icon-header flex-w flex-r-m">
+                        <a href="{{ route('profil.show', Auth::user()) }}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                            Akun anda
+                        </a>
+                    </div>
+                @else
+                    <div class="wrap-icon-header flex-w flex-r-m">
+                        <a href="{{ route('login') }}"
+                            class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+                            Login
+                        </a>
+                    </div>
+                @endif
+
             </nav>
         </div>
     </div>

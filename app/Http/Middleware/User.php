@@ -15,7 +15,7 @@ class User
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user()->akroleses == 'user') {
+        if ($request->user()->role == 'user') {
             return $next($request);
         }
         abort(403, 'Akses khusus admin');
