@@ -37,7 +37,6 @@ Route::prefix('user')->middleware(['auth', 'auth.user'])->group(function () {
     Route::get('/profil/{user}', [ProfileController::class, 'show'])->name('profil.show');
     Route::post('/produk/{jasa_id}/komentar', [ForumDiskusiController::class, 'store'])->name('forum.store');
     Route::post('/forum/store/{jasa_id?}', [ForumDiskusiController::class, 'store'])->name('forum.store');
-
 });
 
 Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
@@ -48,11 +47,37 @@ Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
     })->name('jasa.detail');
     Route::post('/jasa-prices', [JasaPriceController::class, 'store'])->name('jasa-prices.store');
     Route::put('/jasa-price/{id}', [JasaPriceController::class, 'update'])->name('jasa-price.update');
-Route::delete('/jasa-price/{id}', [JasaPriceController::class, 'destroy'])->name('jasa-price.destroy');
-
+    Route::delete('/jasa-price/{id}', [JasaPriceController::class, 'destroy'])->name('jasa-price.destroy');
 });
 
 Auth::routes();
 Route::get('logout', function () {
     Auth::logout();
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+    Route::put('/cart/{id}', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
+    Route::delete('/cart/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.destroy');
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
+        Route::post('/checkout/process', [App\Http\Controllers\CheckoutController::class, 'process'])->name('checkout.process');
+    });
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [App\Http\Controllers\OrderController::class, 'show'])->name('orders.show');
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/profile/{user}', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
+    });
+});
+
+Route::middleware(['auth', 'auth.admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/orders', [App\Http\Controllers\Admin\OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [App\Http\Controllers\Admin\OrderController::class, 'show'])->name('orders.show');
+    Route::put('/orders/{order}/status', [App\Http\Controllers\Admin\OrderController::class, 'updateStatus'])->name('orders.update-status');
+    Route::put('/orders/{order}/analysis', [App\Http\Controllers\Admin\OrderController::class, 'updateAnalysis'])->name('orders.update-analysis');
+    Route::put('/orders/{order}/complete', [App\Http\Controllers\Admin\OrderController::class, 'complete'])->name('orders.complete');
 });

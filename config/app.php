@@ -57,7 +57,11 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => env('ASSET_URL'),
+    // Find the 'asset_url' configuration and update it
+    'asset_url' => env('ASSET_URL', null),
+    
+    // Add this line after the asset_url configuration if it's not already there
+    'mix_url' => env('MIX_ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------

@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>{{ $title }}</title>
+    <!-- Around line 5, add a default title if none is provided -->
+    <title>{{ $title ?? 'DigiEvalPro' }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/public">
@@ -55,10 +56,30 @@
     </style>
 </head>
 
+<!-- Move the alert messages to the correct position, right after the header -->
 <body class="animsition">
     @include('public.layouts.header')
 
+    <!-- Add the alert messages here -->
+    @if(session('success'))
+        <div class="container mt-3">
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="container mt-3">
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        </div>
+    @endif
+
     @yield('content')
+    
+    <!-- Rest of the layout remains unchanged -->
 
     <footer class="bg3 p-t-75 p-b-32">
         <div class="container">
@@ -349,3 +370,20 @@
 </body>
 
 </html>
+
+<!-- Add this somewhere in your layout, perhaps after the header -->
+@if(session('success'))
+    <div class="container mt-3">
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="container mt-3">
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    </div>
+@endif

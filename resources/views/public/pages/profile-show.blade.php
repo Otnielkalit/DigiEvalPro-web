@@ -1,10 +1,36 @@
 @extends('public.layouts.master')
 
 @section('content')
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+    <div class="container" style="margin-top: 120px; margin-bottom: 50px;">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-header text-white" style="background-color: #FF9800;">
+                        <h5 class="mb-0">Menu</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a href="{{ route('profile.show', auth()->user()) }}" class="text-decoration-none" style="color: #FF9800;">
+                                    <i class="fa fa-user mr-2"></i> Profil Saya
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('cart.index') }}" class="text-decoration-none" style="color: #FF9800;">
+                                    <i class="fa fa-shopping-cart mr-2"></i> Keranjang Saya
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('orders.index') }}" class="text-decoration-none" style="color: #FF9800;">
+                                    <i class="fa fa-list-alt mr-2"></i> Daftar Pesanan
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-8">
                 <h1 class="text-center mb-4">User Profile</h1>
 
                 <div class="card shadow">

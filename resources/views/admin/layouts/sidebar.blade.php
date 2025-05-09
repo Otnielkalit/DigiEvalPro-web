@@ -33,6 +33,15 @@
                 </li>
             </ul>
         </li>
+        
+        <!-- Orders menu item -->
+        <li class="menu-item {{ \Route::is('admin.orders.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.orders.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cart"></i>
+                <div data-i18n="Orders">Pesanan</div>
+            </a>
+        </li>
+        
         <li class="menu-item">
             <a href="{{ route('logout') }}" class="menu-link"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
