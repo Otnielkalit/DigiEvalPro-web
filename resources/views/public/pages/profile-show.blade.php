@@ -30,28 +30,36 @@
                 </div>
             </div>
 
-            <div class="col-md-8">
-                <h1 class="text-center mb-4">User Profile</h1>
+                <h1 class="text-center mb-5"></h1>
 
                 <div class="card shadow">
                     <div class="card-body">
-                        <h3 class="mb-3">{{ $user->name }}</h3>
+                        <h1 class="text-center mb-4">User Profile</h1>
 
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <strong>Email:</strong> {{ $user->email }}
-                            </li>
-                            <li class="list-group-item">
-                                <strong>Phone:</strong> {{ $user->nohp ?? '-' }}
-                            </li>
-                            <li class="list-group-item">
-                                <strong>Role:</strong> {{ ucfirst($user->role) }}
-                            </li>
-                            <li class="list-group-item">
-                                <strong>Email Verified At:</strong>
-                                {{ $user->email_verified_at ? $user->email_verified_at->format('d M Y') : 'Not Verified' }}
-                            </li>
-                        </ul>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Email</th>
+                                        <td>{{ $user->email }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Phone</th>
+                                        <td>{{ $user->nohp ?? '-' }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Role</th>
+                                        <td>{{ ucfirst($user->role) }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email Verified At</th>
+                                        <td>
+                                            {{ $user->email_verified_at ? $user->email_verified_at->format('d M Y') : 'Not Verified' }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
                         <div class="mt-4 text-center">
                             <form action="{{ route('logout') }}" method="POST">
