@@ -31,10 +31,10 @@
                             <a href="{{ route('welcome') }}">Beranda</a>
                         </li>
                         <li class="{{ request()->routeIs('service') ? 'active-menu' : '' }}"><a
-                                href="{{ route('service') }}">Jasa</a></li>
+                                href="{{ route('service') }}">Layanan</a></li>
                         </li>
                         <li class="{{ request()->routeIs('about') ? 'active-menu' : '' }}"><a
-                                href="{{ route('about') }}">Tentang</a></li>
+                                href="{{ route('about') }}">Tentang Kami</a></li>
                         <li class="{{ request()->routeIs('contact') ? 'active-menu' : '' }}"><a
                                 href="{{ route('contact') }}">Kontak</a></li>
                     </ul>
@@ -81,10 +81,10 @@
                 <a href="{{ route('welcome') }}">Beranda</a>
             </li>
             <li class="{{ request()->routeIs('service') ? 'active-menu' : '' }}"><a
-                    href="{{ route('service') }}">Jasa</a></li>
+                    href="{{ route('service') }}">Layanan</a></li>
             </li>
             <li class="{{ request()->routeIs('about') ? 'active-menu' : '' }}"><a
-                    href="{{ route('about') }}">Tentang</a></li>
+                    href="{{ route('about') }}">Tentang Kami</a></li>
             <li class="{{ request()->routeIs('contact') ? 'active-menu' : '' }}"><a
                     href="{{ route('contact') }}">Kontak</a></li>
         </ul>
