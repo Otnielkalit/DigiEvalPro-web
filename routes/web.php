@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\JasaController;
 use App\Http\Controllers\Public\PublicController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\Public\ForumDiskusiController;
+use App\Http\Controllers\CartController;
+
 
 /*
 |---------------------------------------------------------------------------
@@ -58,11 +60,17 @@ Route::get('logout', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
     Route::post('/cart', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+    Route::post('/cart/upload-document', [CartController::class, 'uploadDocument'])->name('cart.uploadDocument');
+    Route::post('/cart/upload', [CartController::class, 'upload'])->name('cart.upload');
+    Route::post('/cart/upload/{cartItemId}', [CartController::class, 'uploadDocument'])->name('cart.upload');
     Route::put('/cart/{id}', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
     Route::delete('/cart/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.destroy');
+    Route::delete('/cart/remove/{item}', [CartController::class, 'remove'])->name('cart.remove');
     Route::middleware(['auth'])->group(function () {
         Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index'])->name('checkout');
         Route::post('/checkout/process', [App\Http\Controllers\CheckoutController::class, 'process'])->name('checkout.process');
+    Route::get('/payment', [CartController::class, 'payment'])->name('payment');
+
     });
 });
 

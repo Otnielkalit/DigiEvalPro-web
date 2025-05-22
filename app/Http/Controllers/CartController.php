@@ -14,7 +14,25 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+        public function uploadDocument(Request $request)
+    {
+        // Validasi file dokumen
+        $request->validate([
+            'document' => 'required|mimes:pdf,doc,docx,jpg,png|max:2048',
+        ]);
+
+        // Proses upload dokumen
+        $document = $request->file('document');
+        $path = $document->store('documents', 'public');
+
+        // Simpan path dokumen ke session atau database
+        session(['uploaded_document' => $path]);
+
+        // Redirect ke halaman checkout
+        return redirect()->route('checkout')->with('success', 'Dokumen berhasil diupload!');
+    }
+    
+     public function index()
     {
         $cartItems = Cart::where('user_id', Auth::id())
             ->with('jasa')
@@ -95,12 +113,27 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
+        // Cari item di keranjang berdasarkan ID dan user login
         $cartItem = Cart::where('id', $id)
             ->where('user_id', Auth::id())
             ->firstOrFail();
-            
+
+        // Hapus item dari keranjang
         $cartItem->delete();
-        
+
+        // Hitung ulang total pembayaran sisa item di keranjang
+        $newTotal = Cart::where('user_id', Auth::id())
+            ->sum(\DB::raw('price * quantity'));
+
+        // Jika request berasal dari AJAX, kembalikan response JSON
+        if (request()->expectsJson()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Item berhasil dihapus dari keranjang',
+                'new_total' => number_format($newTotal, 0, ',', '.'),
+            ]);
+        }
+
         return redirect()->route('cart.index')->with('success', 'Item berhasil dihapus dari keranjang');
     }
 }
