@@ -18,7 +18,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Enhanced Services Card Layout Section -->
     <section class="bg0 p-t-70 p-b-70">
         <div class="container">
@@ -27,7 +27,7 @@
                     <h3 class="ltext-104 cl2 text-center">Semua Layanan Digital</h3>
                     <div class="section-divider m-b-40"></div>
                 </div>
-                
+
                 <!-- Services Cards -->
                 <div class="col-lg-12">
                     @if(count($jasas) > 0)
@@ -49,7 +49,7 @@
                                                 <span class="bg-dark cl0 p-lr-10 p-tb-5" style="border-radius: 20px; font-weight: 500;">Rp{{ number_format($jasa->harga, 0, ',', '.') }}</span>
                                             </div>
                                         </div>
-                                        
+
                                         <!-- Card Content -->
                                         <div class="p-4">
                                             <h4 class="ltext-108 cl2 m-b-15 hover-cl1 transition-all" style="min-height: 60px; font-weight: 600;">
@@ -57,11 +57,11 @@
                                                     {{ $jasa->nama }}
                                                 </a>
                                             </h4>
-                                            
+
                                             <p class="stext-117 cl6 m-b-20">
                                                 Solusi digital profesional dengan pendekatan modern untuk kebutuhan bisnis Anda. Tingkatkan performa bisnis dengan layanan kami.
                                             </p>
-                                            
+
                                             <!-- Card Footer -->
                                             <div class="d-flex justify-content-between align-items-center p-t-15 border-top">
                                                 <span class="stext-111 cl6">
@@ -77,7 +77,7 @@
                                 </div>
                             @endforeach
                         </div>
-                        
+
                         <!-- Enhanced Pagination -->
                         <div class="row">
                             <div class="col-12">
@@ -87,17 +87,17 @@
                                         <a href="{{ $jasas->previousPageUrl() }}" class="pagination-btn prev-btn {{ $jasas->onFirstPage() ? 'disabled' : '' }}">
                                             <i class="fa fa-angle-left"></i>
                                         </a>
-                                        
+
                                         <!-- Page Numbers -->
                                         <div class="flex-w flex-c-m pagination-numbers">
                                             @for ($i = 1; $i <= $jasas->lastPage(); $i++)
-                                                <a href="{{ $jasas->url($i) }}" 
+                                                <a href="{{ $jasas->url($i) }}"
                                                    class="flex-c-m pagination-item trans-04 m-all-7 {{ $i == $jasas->currentPage() ? 'active-pagination' : '' }}">
                                                     {{ $i }}
                                                 </a>
                                             @endfor
                                         </div>
-                                        
+
                                         <!-- Next Page Button -->
                                         <a href="{{ $jasas->nextPageUrl() }}" class="pagination-btn next-btn {{ !$jasas->hasMorePages() ? 'disabled' : '' }}">
                                             <i class="fa fa-angle-right"></i>
@@ -125,7 +125,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Call to Action Section -->
     <section class="p-t-60 p-b-60" style="background-color: #f8f9fa;">
         <div class="container">
@@ -154,30 +154,30 @@
         .transition-all {
             transition: all 0.3s ease;
         }
-        
+
         /* Card Hover Effects */
         .hover-shadow:hover {
             box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1)!important;
             transform: translateY(-5px);
         }
-        
+
         .hover-zoom {
             transition: transform 0.5s ease;
         }
-        
+
         .hover-zoom:hover {
             transform: scale(1.08);
         }
-        
+
         .hover-cl1:hover {
             color: #717fe0 !important;
         }
-        
+
         /* Card Image Container */
         .card-img-container {
             position: relative;
         }
-        
+
         /* Category Badge */
         .category-badge {
             position: absolute;
@@ -185,7 +185,7 @@
             left: 15px;
             z-index: 2;
         }
-        
+
         /* Price Badge */
         .price-badge {
             position: absolute;
@@ -193,14 +193,14 @@
             right: 15px;
             z-index: 2;
         }
-        
+
         /* Improved Pagination */
         .pagination-container {
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .pagination-btn {
             display: flex;
             align-items: center;
@@ -212,21 +212,21 @@
             color: #333;
             transition: all 0.3s ease;
         }
-        
+
         .pagination-btn:hover:not(.disabled) {
             background-color: #717fe0;
             color: #fff;
         }
-        
+
         .pagination-btn.disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
-        
+
         .pagination-numbers {
             margin: 0 10px;
         }
-        
+
         .pagination-item {
             width: 40px;
             height: 40px;
@@ -235,26 +235,26 @@
             color: #333;
             font-weight: 500;
         }
-        
+
         .pagination-item:hover {
             background-color: #e6e6e6;
         }
-        
+
         .active-pagination {
             background-color: #717fe0 !important;
             color: #fff !important;
         }
-        
+
         /* Button Link Style */
         .btn-link {
             color: #717fe0;
             font-weight: 500;
         }
-        
+
         .btn-link:hover {
             color: #5965b2;
         }
-        
+
         /* Enhanced Header Animations */
         @keyframes fadeInDown {
             from {
@@ -266,7 +266,7 @@
                 transform: translateY(0);
             }
         }
-        
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -275,7 +275,7 @@
                 opacity: 1;
             }
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -286,26 +286,26 @@
                 transform: translateY(0);
             }
         }
-        
+
         .animated {
             animation-duration: 1s;
             animation-fill-mode: both;
         }
-        
+
         .fadeInDown {
             animation-name: fadeInDown;
         }
-        
+
         .fadeIn {
             animation-name: fadeIn;
             animation-delay: 0.3s;
         }
-        
+
         .fadeInUp {
             animation-name: fadeInUp;
             animation-delay: 0.6s;
         }
-        
+
         /* Section Divider */
         .section-divider {
             width: 80px;

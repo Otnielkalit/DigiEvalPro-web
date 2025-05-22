@@ -12,16 +12,16 @@
                             Our Story
                         </h3>
 
-                        <p class="stext-113 cl6 p-b-26">
+                        <h4 class="cl6 p-b-26">
                             DigiEval Pro lahir dari visi besar PT. Digital Insight Analytics untuk menjawab tantangan dalam
                             dunia digital yang terus berkembang pesat. Banyak perusahaan kesulitan memahami bagaimana
                             pengguna berinteraksi dengan produk digital mereka secara nyata. Kami hadir untuk menjembatani
                             kesenjangan tersebut dengan menghadirkan platform analisis produk digital yang akurat,
                             sistematis, dan berbasis data. Berawal dari kolaborasi para profesional muda di bidang
                             teknologi, desain, dan data science, DigiEval Pro berkembang menjadi solusi terpercaya yang
-                            digunakan oleh berbagai kalangan—mulai dari startup, pengembang aplikasi, hingga perusahaan
+                            digunakan oleh berbagai kalangan mulai dari startup, pengembang aplikasi, hingga perusahaan
                             teknologi skala besar.
-                        </p>
+                        </h4>
                     </div>
                 </div>
 
@@ -41,13 +41,13 @@
                             Our Mission
                         </h3>
 
-                        <p class="stext-113 cl6 p-b-26">
+                        <h4 class="cl6 p-b-26">
                             meningkatkan kualitas produk digital melalui analisis profesional yang akurat serta memberikan
                             solusi nyata yang mendorong daya saing dan kesuksesan di pasar. Dalam setiap layanan yang kami
                             tawarkan, kami menjunjung tinggi nilai-nilai integritas, transparansi, dan kolaborasi. DigiEval
                             Pro hadir untuk membawa misi ini ke setiap layar, kode, dan keputusan penting yang diambil oleh
                             para pelaku industri digital Indonesia.
-                        </p>
+                        </h4>
 
                     </div>
                 </div>

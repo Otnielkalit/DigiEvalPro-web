@@ -23,6 +23,21 @@
                                         </a>
                                     </div>
                                 </div>
+
+                                @if (isset($jasa->galeri) && count($jasa->galeri) > 0)
+                                    @foreach ($jasa->galeri as $galeri)
+                                        <div class="item-slick3" data-thumb="{{ asset('storage/' . $galeri->gambar) }}">
+                                            <div class="wrap-pic-w pos-relative">
+                                                <img src="{{ asset('storage/' . $galeri->gambar) }}" alt="IMG-PRODUCT">
+                                                <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                                                    href="{{ asset('storage/' . $galeri->gambar) }}">
+                                                    <i class="fa fa-expand"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @else
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -42,7 +57,7 @@
                                         @csrf
                                         <input type="hidden" name="jasa_id" value="{{ $jasa->id }}">
                                         <input type="hidden" name="quantity" value="1">
-                                        <button type="submit" 
+                                        <button type="submit"
                                             class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                                             Add to cart
                                         </button>
@@ -51,7 +66,7 @@
                             </div>
                         </div>
                         <div class="flex-w flex-m p-l-100 p-t-40 respon7">
-                            <a href="https://wa.me/6281262425029?text=Halo DigitalPro, saya tertarik dengan layanan {{ urlencode($jasa->nama) }}"
+                            <a href="https://wa.me/6281262425029?text=Halo DigiEvalPro, saya tertarik dengan layanan {{ urlencode($jasa->nama) }}%0A%0AHarga: Rp{{ number_format($jasa->harga, 0, ',', '.') }}%0ALink: {{ urlencode(route('detail-service', $jasa->id)) }}"
                                 class="flex-m hov-cl1 trans-04 p-lr-5 p-tb-2 tooltip100" data-tooltip="WhatsApp"
                                 target="_blank" style="text-decoration: none;">
                                 <img src="{{ asset('assets/images/logowa.png') }}" alt="WhatsApp"
