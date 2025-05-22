@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<form class="bg0 p-t-75 p-b-85">
+<div class="bg0 p-t-75 p-b-85">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
@@ -39,34 +39,36 @@
                             <tr class="table_row">
                                 <td class="column-1">
                                     <div class="how-itemcart1">
-                                        <img src="{{ asset('storage/' . $item->jasa->gambar) }}" alt="{{ $item->jasa->nama }}">
+                                        <img src="{{ asset('storage/' . $item->jasa->gambar) }}" alt="{{ $item->jasa->nama }}" class="img-fluid">
                                     </div>
                                 </td>
                                 <td class="column-2">{{ $item->jasa->nama }}</td>
                                 <td class="column-3">Rp{{ number_format($item->price, 0, ',', '.') }}</td>
                                 <td class="column-4">
-                                    <div class="wrap-num-product flex-w m-l-auto m-r-0">
-                                        <form action="{{ route('cart.update', $item->id) }}" method="POST" class="d-inline">
-                                            @csrf
-                                            @method('PUT')
-                                            <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-minus"></i>
-                                            </div>
-                                            <input class="mtext-104 cl3 txt-center num-product" type="number" name="quantity" value="{{ $item->quantity }}">
-                                            <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                <i class="fs-16 zmdi zmdi-plus"></i>
-                                            </div>
-                                            <button type="submit" class="d-none update-cart-btn">Update</button>
-                                        </form>
-                                    </div>
+                                    <input class="mtext-104 cl3 txt-center num-product" type="number" name="quantity" value="{{ $item->quantity }}" readonly>
                                 </td>
                                 <td class="column-5">Rp{{ number_format($item->price * $item->quantity, 0, ',', '.') }}</td>
                                 <td class="column-6">
-                                    <form action="{{ route('cart.destroy', $item->id) }}" method="POST">
+                                    <form action="{{ route('cart.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Hapus item ini?')">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger">
-                                            <i class="zmdi zmdi-delete"></i>
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i> <!-- Ikon tempat sampah -->
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr class="table_row">
+                                <td colspan="6">
+                                    <!-- Form Unggah Dokumen untuk setiap produk -->
+                                    <form action="{{ route('cart.upload', $item->id) }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-group">
+                                            <label for="document_{{ $item->id }}">Unggah Dokumen untuk {{ $item->jasa->nama }}:</label>
+                                            <input type="file" name="document" id="document_{{ $item->id }}" class="form-control" required>
+                                        </div>
+                                        <button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                                            Unggah Dokumen
                                         </button>
                                     </form>
                                 </td>
@@ -129,20 +131,16 @@
                     </div>
                 </div>
 
-                <a href="{{ route('checkout') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
-                    Lanjutkan ke Pembayaran
-                </a>
-                </div>
             </div>
         </div>
     </div>
-</form>
+</div>
 @endsection
+
 
 @push('scripts')
 <script>
     $(document).ready(function() {
-        // Update cart when quantity changes
         $('.btn-num-product-up, .btn-num-product-down').click(function() {
             setTimeout(function() {
                 $('.update-cart-btn').click();
